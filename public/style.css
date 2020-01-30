@@ -1,0 +1,13 @@
+body {
+  background-color: #dee2e6;
+}
+
+input {
+  flex: none !important;
+}
+.stock-input {
+  width: 5rem;
+}
+.like-input {
+  width: 4rem;
+}
