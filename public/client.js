@@ -14,11 +14,19 @@ $(function() {
 
   $("form").submit(function() {
     event.preventDefault();
+    $("button").attr("disabled", true);
+    $("button", this).html(
+      '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only">Uploading...</span>'
+    );
     $.ajax({
       url: "/api/stock-prices",
       type: "get",
       data: serializeWithoutBlanks(),
-      success: displayResult
+      success: function(result) {
+        displayResult(result);
+        $("form button").html("GET");
+        $("button").removeAttr("disabled");
+      }
     });
   });
 });
