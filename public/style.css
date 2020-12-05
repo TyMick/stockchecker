@@ -5,9 +5,9 @@ body {
 input {
   flex: none !important;
 }
-.stock-input {
+.stock-input.stock-input {
   width: 5rem;
 }
-.like-input {
+.like-input.like-input {
   width: 4rem;
 }
